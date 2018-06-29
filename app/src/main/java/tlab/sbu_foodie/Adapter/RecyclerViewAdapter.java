@@ -170,11 +170,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
-    /**
-     * Returns the total number of the customer arraylist.
-     *
-     * @return returns the size of the number of the cars in the list.
-     */
+
     @Override
     public int getItemCount() {
 
