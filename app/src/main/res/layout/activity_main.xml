@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tlab.sbu_foodie.Activities.MainActivity">
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nihaskalam.progressbuttonlibrary.CircularProgressButton
+        android:id="@+id/navigation"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text_state_selector"
+        android:textSize="15sp"
+        android:onClick="onClickFirstBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:pb_colorCancelText="@color/text_state_selector"
+        app:pb_colorCompleteText="@color/pb_orange"
+        app:pb_colorErrorText="@color/pb_blue"
+        app:pb_colorIndicator="@color/colorButtonCompleteState"
+        app:pb_cornerRadius="48dp"
+
+        app:pb_iconError="@drawable/ic_action_cancel"
+        app:pb_selectorCancel="@color/complete_state_selector"
+        app:pb_selectorComplete="@color/idle_state_selector"
+        app:pb_selectorError="@color/error_state_selector"
+        app:pb_selectorIdle="@color/idle_state_selector"
+        app:pb_textColorAfterClick="@color/colorWhite"
+        app:pb_textIdle="@string/navi"
+        app:pb_textCancel="@string/navi"
+        app:pb_textComplete="@string/navi"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/badge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/alert"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sbueats" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/relative_layout1"
+            android:text=""
+            android:textColor="#FFF"
+            android:textSize="8sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

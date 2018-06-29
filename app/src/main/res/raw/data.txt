@@ -1,0 +1,781 @@
+Chopped Red Bell Pepper	80
+Diced Onions	80
+Sliced Green Onions	12
+Adobo Cauliflower	12
+Adobo Spiced Tofu	8
+Alfredo Sauce	15
+Aloha BBQ Sauce	22
+Andouille Sausage, Chicken Gumbo	4
+Antipasto Wrap	4
+Apple Jacks Cereal	110
+Apple Sage Stuffing	4
+Applesauce with Cinnamon	12
+Apricot Glazed Chicken	4
+Apricot Glazed Pork	4
+Arroz con Gandules	3
+Arroz con Pollo	3
+Arroz Verde	16
+Asian BBQ Glazed Pork	4
+Asian Beef Pepper Steak	4
+Asian Soy Tofu, Scallions	12
+Asian Steamed Vegetable Dumplings	4
+Asian Vegetable Stir Fry	4
+Au Gratin Potatoes	3
+Baby Spinach	80
+Baby Spinach with Raisins	4
+Bacon	24
+Bacon & Tomato Grilled Cheese	12
+bacon ranch crispy chicken sandwich	8
+Bacon, Cheddar Frittata 	16
+Baja Chicken Sub	4
+Baja Pork with Green Rice	4
+Baked Beans	4
+Baked Herb Chicken	7
+Baked Macaroni and Cheese	12
+Baked Pasta Al Forno	12
+Baked Pasta with Ricotta and Ham	4
+Baked Pita Chips	4
+Baked Plantains	4
+Baked Potato	12
+baked sweet potato	12
+Baked Sweet Potato	8
+Baked Tomatoes	8
+Baked Ziti Bolognese	8
+Balsamic Braised Pork	4
+Balsamic Chicken	4
+Balsamic Chicken, Whole Wheat (1 oz)	8
+Balsamic Grilled Eggplant	24
+Balsamic Roasted Eggplant	11
+Balsamic Vegetable, Wheat Wrap	19
+Balsamic Vinaigrette	300
+Barbecue Braised Pork 	4
+barbecue Chicken Pizza	8
+Barbecue Chicken Pizza	3
+Barbecue Chicken Sub	8
+Barbecue Salmon	4
+Barbecue Tofu and Vegetable Medley	8
+Barbecue Turkey Sandwich	4
+Barbecued Beans	8
+Barbecued Pork Loin	12
+Barley	32
+Barley and Brown Rice	4
+Basil Pesto Vegetable Pasta	8
+Basmati Rice	8
+Basmati Rice with Peas	24
+Basmati Rice with Saffron and Basil	8
+Batter Fried Cod	8
+BBQ Chicken	190
+BBQ Chicken, Cheddar, WW Wrap	8
+bbq onion burger	4
+BBQ Tempeh	4
+Beans, Garbanzo, Rinsed	4
+Beef Chili	12
+Beef Hot Dog	318
+Beef Masala	4
+Beef Pot Roast	3
+Beef Ragout Burgundy with Noodles	4
+Beef Stew	4
+Beef Taco	8
+Beef Taco Meat	16
+Beer Battered Fish	4
+Beets with Orange Sauce	16
+Black Bean Salsa	4
+Black Beans	312
+Black Beans with Rice	8
+Black Olive and Artichoke Pizza	8
+Blackened Chicken Caesar Wrap	8
+BLT Wrap	8
+Blue Cheese Crumbles Dressing	300
+Bolognese Sauce	8
+Border Potato Skins	12
+Braised Cabbage	10
+Braised Cabbage with Raisins	4
+Braised Chicken with Olives	8
+Braised Eggplant 	8
+Braised Red Cabbage	12
+Bratwurst	4
+Bratwurst with BBQ Onions	4
+Breaded Mozzarella Cheese Sticks	16
+Breakfast Potatoes	56
+Broccoli	7
+Broccoli Alfredo Pizza	8
+Broccoli and Tomatoes	12
+Broccoli Au Gratin	4
+Broccoli Florets	300
+Broccoli Rabe with Garlic	4
+Broccoli with Garlic Sauce	3
+Broccoli, Fresh Steamed	8
+Brown Rice	28
+Brown Rice and Lentils	8
+Brown Rice Pilaf	4
+Bruschetta Burger	4
+Bruschetta Pizza with Chicken	4
+Brussels Sprouts	8
+Buffalo'd Cauliflower	4
+Buffalo Beef Slider	4
+Buffalo Chicken	190
+Buffalo Chicken Baguette	8
+Buffalo Chicken Pizza	8
+Buffalo Chicken Sandwich	8
+Buffalo Ham and Turkey Hoagie	8
+Bulgogi Korean Beef	4
+Buttered Egg Noodles	7
+Buttermilk Pancakes	24
+Cajun Baked Sweet Potato Fries	4
+Cajun Blackened Catfish	4
+Cajun Catfish	4
+Cajun Chicken	12
+Cajun Chicken Pasta	20
+Cajun Chicken Sandwich	4
+Cajun Lentil Stew	8
+Cajun Okra and Corn	8
+Cajun Remoulade	4
+Cajun Spiced Fries	15
+California Chicken Sandwich	4
+California Vegetable Panini	4
+California Wrap	8
+Calypso Chicken	4
+Canadian Bacon	12
+Caprese Baguette	12
+Caramelized Onions	4
+Caribbean Jerk Pork Roast	4
+Carne Asada Taco	4
+Carolina Pulled Pork Sliders	16
+Carved Top Round Beef	3
+Cauliflower	8
+Cauliflower "Cream" Sauce	4
+Cauliflower Skordalia	4
+Char Siu Pork	8
+Charleston Chicken Wrap	12
+Cheerios	109
+Cheese Blintz	4
+Cheese Blintz with Cherry Topping	4
+Cheese Pizza	330
+Cheese Sauce	20
+Cheese Tortellini a la Vodka	8
+Cheeseburger	330
+Cheesy Beef and Pasta	16
+Cheesy Chicken Tortellini Bake	4
+Chicken Adobo	4
+Chicken Caesar Melt	4
+Chicken Caesar Pizza	8
+Chicken Caesar Sandwich	8
+Chicken Caesar Wrap	3
+Chicken Caesar, Wheat Wrap	4
+Chicken Cordon Bleu	7
+Chicken Enchilada Casserole	8
+Chicken Fajita	15
+Chicken Fettuccini Alfredo	24
+Chicken Florentine	3
+Chicken Mole	4
+Chicken Parmesan	8
+Chicken Pesto Club Wrap	4
+Chicken Primavera Pasta	8
+Chicken Quesadilla	4
+Chicken Salad	300
+Chicken Salad, Lt Mayo, White	4
+Chicken Souvlaki	4
+Chicken Tender Wrap	4
+Chicken Tikka Masala	4
+Chicken Tortilla Soup	4
+Chicken Vegetable Paella	4
+Chicken Verde	4
+Chicken, Broccoli, Pasta Bake	8
+Chicken, Mozzarella, Tomato, Basil	8
+Chickpeas and Spinach	4
+Chimichurri Charred Cauliflower 	16
+Chimichurri Chicken Bowl	4
+Chimichurri Pork Loin	4
+Chipotle Barbecue Sauce	8
+Chipotle BBQ Chicken Pizza	4
+Chipotle Meatloaf	4
+Chopped Bacon	4
+Chopped Romaine Lettuce	300
+Cilantro Lime Grilled Tofu	12
+cilantro lime rice	4
+Cilantro Lime Rice	4
+Cilantro Rice	12
+Cinnamon Glazed Carrots	8
+Citrus Pork Carnitas	4
+Citrus Remoulade	4
+Classy Italian Sub	4
+Collard Greens	4
+Cooked Dried Black Beans	4
+Cooked Dried Pinto Beans	8
+Cooked Lentils	16
+Corn	12
+Corn and Black Beans	16
+Corn Dog	4
+Corn Pudding	4
+Corn Salsa	4
+Corn Taco Shell	16
+Corn with Pimento	4
+Cornbread Stuffing	4
+Corned Beef Brisket	11
+Corned Beef Hash	8
+Couscous	8
+Couscous Stuffed Tomatoes	4
+Cranberry Sauce	6
+Creamed Spinach	4
+Creamy Caesar Dressing	300
+Creamy Guacamole	15
+Creamy Pasta with Vegetables	8
+Crispy Baked Tofu	8
+Crispy Buffalo Chicken Wrap	4
+Crispy Chicken Sandwich	4
+Crispy Chicken Special Sauce	4
+Crispy Chicken Super Sub	4
+Cuban Panini	4
+Cuban Rice	4
+Cubano Pork Slider 	4
+Cubed Cantaloupe	110
+Cubed Honeydew Melon	110
+Cubed Pineapple	110
+Cubed Watermelon	110
+Cumin Chicken Breast	4
+Cumin Roasted Eggplant	4
+Curly-Q French Fries	36
+Curried Broccoli	8
+Curried Chicken Salad with Almonds	8
+Curried Mushrooms and Peas	4
+Curried Roasted Vegetables	8
+Curried Vegetable, Kale, WW Wrap	4
+Curry Chicken Salad on Wheat Bun	4
+Dal	4
+Dark Red Kidney Beans	308
+Diced Bacon	4
+Diced Ham	190
+Diced Smoked Ham	80
+Diced Tomatoes	100
+Dijon Roast Beef on Kaiser Roll	8
+Dijon Roasted Potatoes	8
+Dill Carrots	4
+Dill Pickle Spears	12
+Dilled Carrots and Zucchini	4
+Dirty Rice	12
+Eat Well Spinach	12
+Edamame	20
+Egg and Sausage Pizza	30
+Egg Salad	300
+Egg Salad and Bacon on Kaiser	4
+Egg Salad Focaccia	8
+Egg Salad on Wheat	4
+Egg Salad Sandwich	4
+Egg Salad, Whole Wheat Wrap	8
+Eggplant and Hummus Sandwich	24
+Eggplant Parmesan	3
+Eggplant Parmesan Slider	16
+EW Slaw	8
+Falafel	28
+Falafel Pita Pockets	20
+Fiesta Chicken Pizza	11
+Fire Roasted Chipotle Salsa	28
+Flour Tortilla	19
+Fragrant Lentil Rice	8
+French Dip Sliders	8
+French Dressing	300
+French Fries 	346
+French Toast	20
+French Toast Casserole	20
+French Toast Sticks	26
+Fresh Green Beans	8
+Fresh Roasted Rosemary Carrots	12
+Fresh Tomato Salsa	15
+Fried Onion Rings	8
+Fried Plantain	16
+Fried Plantains	12
+Fried Rice	4
+Fried Shrimp	4
+Fried Zucchini	4
+Frijoles	4
+Froot Loops Cereal	110
+Frosted Flakes	110
+Garden Burger	310
+Garden Chicken Wrap	4
+Garden Vegetable Blend	4
+Garden Wrap	4
+Garlic Bread	31
+Garlic Green Beans	50
+Garlic Rice	18
+Garlic Roasted Broccoli and Cauliflower	8
+Garlic Roasted Broccoli, Cauliflower	4
+Garlic Roasted Cauliflower	4
+Garlic Roasted Potatoes	4
+General Tso's Sauce	12
+German Potato Salad	4
+Gingered Carrots	20
+Gingered Snow Peas	16
+Glazed Carrots	4
+Glazed Carrots and Parsnips	8
+Glazed Ham	8
+Gobi Matar (Cauliflower, Pea Curry)	4
+Golden Rice	8
+Grandma Pizza	8
+Grape Jelly	110
+Grape Tomatoes	300
+Grated Carrots	300
+Grated Parmesan Cheese	15
+Greek Pizza	8
+Green Bean Casserole	4
+Green Beans and Potato Curry	3
+Green Peas	4
+Grilled Cajun Chicken	4
+Grilled Cheese	204
+Grilled Cheese and Tomato Sandwich	4
+Grilled Chicken	304
+Grilled Chicken Caesar Wrap	4
+Grilled Chicken Sandwich	314
+Grilled Eggplant	12
+Grilled Five Spice Chicken	3
+Grilled Five Spice Pork	4
+Grilled Ginger, Soy Tofu	28
+Grilled Pesto Chicken Baguette	8
+Grilled Pineapple	8
+Grilled Pork Loin	8
+Grilled Reuben Sandwich	11
+Grilled Tilapia Teriyaki	4
+Grilled Yellow Squash	15
+Grilled Zucchini	16
+Grits	16
+Ground Beef Filling	4
+ground turkey filling	8
+Ham and Cheese Baguette	4
+Ham and Provolone	4
+Ham and Salami on a White Bun	3
+Ham and Swiss Cheese Sandwich	7
+Ham and Swiss Sub	8
+Ham Cheddar on White	4
+Ham Provolone Baguette	8
+Ham,  Salami and Dijon 	4
+Ham, Cheddar, Wheat Bread	16
+Ham, Cheddar, White Wrap	8
+Ham, Salami and Dijon Kaiser	4
+Ham, Swiss, White Bread	4
+Hamburger on Bun	330
+Hard Boiled Egg	126
+Hard Boiled Eggs	8
+Harrisa Carrot Sauce	12
+Hawaiian Burger	4
+Hawaiian Garden Burger	4
+Hawaiian Ham & Cheese Sliders	4
+Hawaiian Pizza	27
+Hearty Vegetable with Hummus	8
+Herb Crusted Grilled Chicken 	4
+Herb Crusted Tilapia	3
+Herb Roasted Butternut Squash	12
+Herb Roasted Pork	4
+Herbed Green Beans	4
+Herbed Polenta	12
+Herbed Rice Pilaf	8
+Hoisin Sauce	8
+Homemade Cornbread	4
+Homemade Granola	110
+Honey	110
+Honey Dijon Ham Sandwich	4
+Honey Glazed Ham	4
+Honey Mustard	4
+Hot Dog Bun	4
+House Fried Potato Chips 	4
+Hummus Eggplant Wrap	8
+Hummus, Spinach, Feta, Tomato Wrap	4
+Italian Dressing	300
+Italian Green Beans	16
+Italian Hoagie	3
+Italian Sausage	4
+Italian Sausage Crumbles	4
+Italian Sausage with Green Peppers	16
+Italian Sausage with Pasta	3
+Jamaican Chicken Wrap	4
+Jamaican Jerk Chicken Thighs	8
+Jasmine Rice	20
+Jerk Tofu, Mango Salsa, Wheat Wrap	8
+Julienne Carrots	12
+Jumbo Cheese Stuffed Shells	4
+Kaiser Roll	300
+Kale and Brussels	4
+Kidney Bean Stew with Sweet  Potatoes and Oranges	8
+Korean Broccoli	4
+Korean Chili Green Beans	8
+Korean Style Spinach 	4
+Lamb Curry	4
+Lamb Vindaloo	4
+Latin Black Beans	8
+Lemon Braised Kale	8
+Lemon Chicken	3
+Lemon Chicken Kebab	4
+Lemon Couscous	12
+Lemon Ginger Broccoli	16
+Lemon Green Beans	4
+Lemon Herb Catfish	4
+Lemon Herb Grilled Tofu	316
+Lemon Herb Pulled Turkey	4
+Lemon Herb Tahini	12
+Lemon Oregano Grilled Chicken	8
+Lemon Pepper Chicken, Wheat	8
+Lemon Pepper Fries	28
+Lemon Pepper Pork Tenderloin	4
+Lemon Thyme Carrots	8
+Lemon, Olive Oil, Broccoli 	12
+Lentil and Potato Salad	4
+Lentil Couscous	8
+Lettuce Leaf	300
+Lima Beans	6
+Lo Mein Noodles	4
+Low Fat Plain Yogurt	110
+Low Fat Strawberry Yogurt	110
+Low Fat Vanilla Yogurt	110
+Mac & Cheese Pizza	8
+Mac & Cheese with Peas	4
+Macaroni and Cheese	4
+Mango Salsa	8
+Manicotti with Marinara	4
+Maple Glazed Sweet Potatoes	4
+Margharita Chicken Pasta	6
+Margherita Pizza	8
+Marinara Sauce	16
+Marinated Bean Salad	12
+Marinated Beef	4
+Marinated Chicken Teriyaki	4
+Marinated Kidney Beans	12
+Marinated Mushrooms	8
+Marsala Sauce	4
+Mashed Potatoes with Horseradish	7
+Mashed Sweet Potatoes	4
+Mayonnaise	300
+Meat Lover's Pizza	8
+Meatball Pizza 	4
+Meatball Sliders	12
+Meatball Sub	4
+Meatballs	15
+Meatless Meatloaf	4
+Meatloaf with Brown Gravy	4
+Meatlovers Pizza	4
+Mega Chicken Salad	8
+Mesquite Beef Brisket	4
+Mexican Corn	16
+Mexican Fajita Tofu Kebabs	12
+Mexican Rice	4
+Mild Cheese Sauce	40
+Mini Ham and Swiss Sub	4
+Miso Glazed Sweet Potatoes	4
+Monte Cristo Sandwich	4
+Monterey Wrap	4
+Moroccan Beef and Tomato	12
+Moroccan Zucchini Wedges	4
+Mushroom Bacon Slider 	4
+Mushroom Risotto	4
+Mushroom Stuffed Tomatoes	8
+Mushroom Swiss Burger	4
+Naan Bread	8
+New Orleans Red Beans	4
+Northern Beans	16
+Old Bay Herbed Fries	28
+Olive Oil Mashed Potatoes	4
+Olive Tapenade	4
+Onions and Peppers	4
+Orange-Honey Glazed Turkey	4
+Orange French Toast	12
+Orange Glazed Broccoli	4
+Orange Glazed Carrots	4
+Orecchiette Pasta Bake 	8
+Oven Fried Potatoes	4
+Paneer Makhani 	4
+Panko Eggplant	12
+Parmesan Noodles	12
+Pasta and Meat Sauce	11
+Pasta Caprese	8
+PBJ Sandwich on Whole Wheat	8
+Peas and Carrots	18
+Penne a la Vodka	330
+Penne Rigate Noodles	15
+Penne, Arrabbiata, Mushrooms	4
+Pepper and Chorizo Frittata	16
+Pepperoni Pizza	330
+Pesto Chicken Pizza	20
+Pesto Crusted Cod	4
+Philadelphia Burger	4
+Philly Burger	4
+Philly Cheese Slider	4
+Philly Cheesesteak Wrap	4
+Pico de Gallo	12
+Pierogies	4
+Pierogis 	4
+Pineapple Coconut Rice	4
+Pinto Beans	4
+Plum Tomato and Basil Sauce	20
+Poached Salmon	8
+Polenta	4
+Pork Breakfast Sausage Patties	12
+Pork Loin with Mango Chutney	4
+Pork Quesadilla	4
+Pork Sausage Link	24
+Pork Sausage Patty	12
+Provolone, Tomato, Onion, Wheat	8
+Pumpkin Turkey Chili	4
+Puttanesca Sauce	8
+Quinoa Cranberry Pilaf	8
+Quinoa, Zucchini, and Sweet Potato 	4
+Ranch Chicken Sandwich	12
+Ranch Dressing	304
+Ratatouille	4
+Ratatouille Mix	8
+Ratatouille Sauce	16
+Red Lentil, Spinach, Ginger Dal	4
+Red Pepper and Snow Peas	12
+Remoulade Sauce	4
+Rice and Beans	20
+Rice and Peas Curry	4
+Rice Chex Cereal	110
+Rice Noodles 	8
+Rice Pilaf	16
+Rice Pilaf with Basil	4
+Rice Stuffed Tomatoes	12
+Rigatoni Mezzi with Italian Sausage	8
+Roast Beef and Blue Cheese Wrap	4
+Roast Beef and Cheddar Sandwich	8
+Roast Beef Blue Cheese Panini	4
+Roast Beef with Caramelized Onions	8
+Roast Beef, American, White Bread	12
+Roast Beef, Horseradish, Kaiser	4
+Roast Beef, Swiss, Wheat	8
+Roast Butternut Squash	12
+Roasted Acorn Squash	8
+Roasted Beets	4
+Roasted Broccoli	40
+Roasted Brussels Sprouts	16
+Roasted Carrots 	12
+Roasted Carrots with Cumin, Cilantro	4
+Roasted Cauliflower	20
+Roasted Chimichurri Cauliflower	4
+Roasted Corn	24
+Roasted Curried Vegetables	4
+Roasted Delicata Squash	4
+Roasted Eggplant, Basil Pesto Mayo	8
+Roasted Fingerling Potatoes	16
+Roasted Garlic Kale	4
+Roasted Garlic Marinara Sauce	23
+Roasted Mushrooms	8
+Roasted Mushrooms, Garlic and Lime	4
+Roasted Pepper Basil Sauce	8
+Roasted Potatoes	4
+Roasted Potatoes with Cumin	11
+Roasted Red Potatoes	12
+Roasted Sicilian Tempeh	8
+Roasted Sweet Potato	12
+Roasted Sweet Potatoes	12
+Roasted Tomato and Garlic Pizza	8
+Roasted Tomato, Chicken Caesar, Wrap	4
+Roasted Tomatoes	24
+Roasted Turkey  Breast	4
+Roasted Vegetable & Pesto Pizza	8
+Roasted Vegetable Pizza	12
+Roasted Vegetable Wrap	15
+Roasted Vegetable, Hummus on Multi Grain	8
+Roasted Yellow Pepper	4
+Roasted Yellow Squash	3
+Roasted Zucchini	6
+Ropa Vieja Braised Beef	4
+Rosemary Roasted Mushroom	6
+Rotisserie Turkey Breast	4
+Russian Western Dressing	300
+Rye Bread	300
+Saffron Rice	4
+Sage Rubbed Turkey Breast	4
+Salami, Ham, and Pesto Baguette	8
+Salsa Verde	16
+Sante Fe Turkey Sandwich	4
+Sauerkraut	4
+Sausage and Mushroom Pizza	8
+Sausage Link	74
+Saut??ed Peppers	12
+Sauteed Breakfast Potatoes	4
+Sauteed Carrot, Eggplant, Green Bean	4
+Sauteed Corn	12
+Sauteed Fresh Spinach	8
+Sauteed Kale	44
+Sauteed Kale, Garlic	8
+Sauteed Mushrooms	16
+Sauteed Spinach	19
+Sauteed Spinach, Lima Beans, Fennel	12
+Sauteed Zucchini and Squash	4
+Savory Brown Rice	8
+Scallion Jasmine Rice	4
+Scrambled Egg Whites	166
+Scrambled Eggs	190
+Seafood Creole	4
+Sesame Broccoli and Carrots	8
+Sesame Soy Bok Choy	24
+Shredded Cheddar Cheese	127
+Shredded Iceberg Lettuce	16
+Shredded Sharp Cheddar Cheese	300
+Shrimp Lo Mein	4
+Shrimp Newburg	4
+shrimp po boy slider	20
+Singapore Sauce	24
+Sliced American Cheese	300
+Sliced Black Olives	300
+Sliced Cremini Mushrooms	300
+Sliced Genoa Salami	300
+Sliced Ham	300
+Sliced Jalapeno	4
+Sliced Mushrooms	80
+Sliced Red Bell Pepper	300
+Sliced Red Onion	300
+Sliced Roasted Turkey Breast	300
+Sliced Swiss Cheese	300
+Sliced Tomatoes	300
+Slow Cooked Whole Pinto Beans	4
+Smashed Black Beans	8
+Smashed Roasted Red Potatoes	8
+Smkd Turkey Provolone Melt, Wheat	4
+Smoked Turkey, Swiss, Ciabatta	4
+Smokey Grilled Pork	8
+Smokey Grilled Turkey	4
+Smokin' Hot Chipotle	8
+Smoky Chili Crusted Chicken	4
+Smoky Jerk Tofu Sword	18
+Snow Peas Stir Fried	8
+Sofrito	8
+Sour Cream	60
+Southern Fried Chicken	4
+Southern Sweet Potatoes	4
+Southwest Beef Taco	4
+Southwest Couscous	4
+Southwest Turkey Hoagie	4
+Southwestern Sloppy Joe	12
+Soy Glazed Shiitake Mushrooms	4
+Spaghetti with Meat Sauce	8
+Spaghetti, Mushrooms, Cauliflower	8
+Spanish Rice	39
+Special K	110
+Spiced & Herbed Potatoes	8
+Spiced and Herbed Potatoes	4
+Spiced Honey Glazed Spiral Ham	4
+Spicy Cabbage Kim Chi	4
+Spicy Carrots and Broccoli	24
+Spicy Collard Greens	4
+Spicy Grilled Chicken	4
+Spicy Tomato Sauce	4
+Spinach and Artichoke Pizza	8
+Spinach with Mushrooms	12
+Spiral Greek Chicken Pasta	8
+Spring Mix Lettuce	300
+Squash, Zucchini, Peppers and Carrots	4
+SR Steamed Carrots	4
+Sriracha Fries	8
+Sriracha Spiced Fries	28
+St. Louis BBQ Sauce	12
+Steak and Blue Cheese Pizza	16
+Steak Fries	8
+Steak Quesadilla	3
+Steamed Beets	16
+Steamed Broccoli	8
+Steamed Broccoli & Cauliflower	4
+Steamed Broccoli Florets	80
+Steamed Brown Rice	56
+Steamed Carrots	4
+Steamed Cauliflower	8
+Steamed Green Wax Beans	12
+Steamed Lima Beans	4
+Steamed Seasoned Corn 	3
+Steamed Vegetable Medley	4
+Stewed Garbanzo Beans	4
+Stir Fry Garlic Sauce	16
+Stir Fry Marinated Tofu	12
+Stuffed Flounder 	4
+Stuffed Shells Florentine	4
+Summer Succotash	8
+Sweet Chili Chicken Wings	4
+Sweet Chili Grilled Tofu	12
+Sweet Chili Turkey Sliders	4
+Sweet Hot Pineapple Chile Sauce	12
+Sweet Orange Roasted Carrots	6
+Sweet Pea Orzo	4
+Sweet Plantains	4
+Sweet Potato and Spinach Vindaloo	4
+sweet potato fries	36
+Sweet Potato Hash	4
+Sweet Potato Wedges	8
+Sweet Thai Cabbage	4
+Tabouleh	4
+Taco Seasoned Fries	15
+Tandoori Chicken	4
+Tartar Sauce	8
+Tater Tots	94
+Tempeh Vegetable Picatta	4
+Teriyaki Ginger Chicken Slider	4
+Texas Style Shredded Pork	4
+Thai Red Chili Spiced Chicken Wings	4
+Thin Sliced Cucumber	300
+Three Bean Chili	18
+Thyme and Garlic Roasted Turkey	4
+Thyme Mashed Sweet Potatoes	14
+Thyme Roasted Potatoes	4
+Toasted Barley	12
+Toasted Chickpeas	4
+Tofu Stuffed Cabbage	4
+Tomato-Basil Sauce	16
+Tomato Basil Caper Dipping Sauce	8
+Tomato Basil Sauce	12
+Tomato Braised Beef	8
+Tomato Caper Sauce	28
+tortilla chips	12
+Tortilla Chips	4
+Tuna Salad on Sliced Wheat	12
+Tuna Salad, Cheddar, White Bread	12
+Tuna Salad, Cheddar, Wrap	4
+Tuna Salad, Cheddar, WW Bread	4
+Tuna Salad, Wheat Wrap	4
+Turkey & Cheddar Sub	8
+Turkey Bacon	28
+Turkey Basil Mayo Wrap	4
+Turkey Burger	220
+Turkey Caesar  Wrap	8
+Turkey Caprese Slider	8
+Turkey Club with Chipotle Aioli	4
+Turkey Ragout with Pasta	8
+Turkey Salad Sandwich	8
+Turkey Sandwich	16
+Turkey Sausage Patty	102
+Turkey Super Sub	26
+Turkey Thyme Mayo Wrap	4
+Turkey Wrap	12
+Turkey, American, Wheat Wrap	8
+Turkey, American, White	4
+Turkey, Bacon, Ranch sub	8
+Turkey, Swiss, White Wrap	8
+Turkey, Tomato Pesto, WW Roll	4
+Turmeric Fried Potatoes	4
+Turmeric Sweet Potato	8
+Tuscan Turkey 	4
+Tuscan Turkey on Kaiser Roll 	4
+Tziki Sauce-Cucumber Sauce	4
+Ultimate TLT Sandwich	8
+Vegan Mexican Rice	4
+Vegetable and Mozzarella Baguette	16
+Vegetable Fried Rice	8
+Vegetable Frittata	78
+Vegetable Lo Mein	4
+Vegetable Paella	24
+Vegetable Stir Fry	4
+Vegetable Stuffed Plantain	4
+Vegetable, Pepper Hummus, Wrap	8
+Vegetarian Collard Greens	4
+Vegetarian Hoppin John	4
+Veggie Supreme Pizza	20
+Veggies and Hummus on a Baguette	8
+Vietnamese Pho Chicken	4
+Virginia Ham Sandwich	4
+Walnut Pesto Mashed Potatoes	8
+Warm German Bacon Potato Salad	12
+White Bread	300
+White Clam Sauce	8
+White Rice	4
+Whole Milk Greek Plain Yogurt	110
+Whole Wheat Bread	300
+Whole Wheat Penne Pasta	15
+Yellow Mustard	300
+Yellow Rice	4
+Yellow Squash with Red Pepper	8
+Zucchini & Yellow Squash	4
+Zucchini Lyonnaise	4

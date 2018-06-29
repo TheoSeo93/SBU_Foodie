@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="places">
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+        <item>@drawable/dininghall_asian</item>
+    </integer-array>
+</resources>

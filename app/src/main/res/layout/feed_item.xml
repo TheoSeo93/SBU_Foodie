@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context="tlab.sbu_foodie.Activities.MainActivity">
+
+
+    <com.roughike.swipeselector.SwipeSelector
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:value="@+value/swipeSelector"
+        app:swipe_descriptionTextAppearance="@style/mTextAppearance"
+        app:swipe_indicatorActiveColor="@color/colorStroke"
+        app:swipe_indicatorInActiveColor="#DDDDDD"
+        app:swipe_indicatorMargin="6dp"
+        app:swipe_indicatorSize="6dp"
+        app:swipe_titleTextAppearance="@style/mTextAppearanceBold">
+
+    </com.roughike.swipeselector.SwipeSelector>
+
+</android.support.v7.widget.CardView>
