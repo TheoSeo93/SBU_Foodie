@@ -19,4 +19,6 @@
     <string name="east_gril">East Side Grill</string>
     <string name="gril_desc">Burgers, tenders, fries and daily grill specials</string>
     <string name="navi">Navigation Mode</string>
+    <string name="east_island">East Side Island Soul</string>
+    <string name="island_desc">Authentic Caribbean fare by Jamaican Cafe</string>
 </resources>

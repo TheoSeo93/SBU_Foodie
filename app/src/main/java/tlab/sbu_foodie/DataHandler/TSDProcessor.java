@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -31,7 +32,69 @@ public final class TSDProcessor {
         extras = ExtendedDataHolder.getInstance();
 
     }
+    public String getTimeSchedule(String tsdString){
 
+        StringBuilder stringBuilder = new StringBuilder();
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+            Stream.of(tsdString.split("\n"))
+                    .map(line -> Arrays.asList(line.split("\t")))
+                    .forEach(list -> {
+                        if (list.get(0).equals("hours")) {
+                          stringBuilder.append(list.get(1));
+                        }
+
+                    });
+
+        }else{
+            String[] lines = tsdString.split("\\r?\\n");
+            for(int i=0;i<lines.length;i++) {
+                String[] elements = lines[i].split("\\t");
+                if (elements.length >= 3) {
+                    if (elements[0].equals("hours")) {
+                        String url = elements[1];
+                        stringBuilder.append(url);
+                    }
+                }
+            }
+        }
+        return stringBuilder.toString();
+    }
+    public List<String> getPeriods(String venueType) {
+        String tsdString = "";
+        List<String> result = new ArrayList<>();
+        if (extras.hasExtra("extra")) {
+            tsdString = (String) extras.getExtra("extra");
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Stream.of(tsdString.split("\n"))
+                    .map(line -> Arrays.asList(line.split("\t")))
+                    .forEach(list -> {
+                        if (list.get(1).equals(venueType) && list.get(0).equals(currentDate)) {
+                            String period = list.get(2);
+
+                            if(!result.contains(period))
+                            result.add(period);
+                        }
+
+                    });
+
+        }else{
+            String[] lines = tsdString.split("\\r?\\n");
+            for(int i=0;i<lines.length;i++) {
+                String[] elements = lines[i].split("\\t");
+                if (elements.length >= 3) {
+                    if (elements[1].equals(venueType) && elements[0].equals(currentDate)) {
+                        String period = elements[2];
+                        if(!result.contains(period))
+                       result.add(period);
+                    }
+                }
+            }
+        }
+       return result;
+    }
     /**
      * Processes the data and populated two {@link Map} objects with the data.
      *
@@ -61,7 +124,6 @@ public final class TSDProcessor {
                                 if (list.size() >= 5)
                                     price = list.get(4);
 
-                                System.out.print(date+revenue+period+name+price);
                                 rows.add(new RowElement(date, revenue, period, name, price));
                             }
 
@@ -73,7 +135,6 @@ public final class TSDProcessor {
                 String[] elements = lines[i].split("\\t");
                 if (elements.length >= 3) {
                     if (elements[1].equals(venueType) && elements[0].equals(currentDate) && elements[2].equals(periodName)) {
-
                         String date = elements[0];
                         String revenue = elements[1];
                         String period = elements[2];

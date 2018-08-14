@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_container"
     android:layout_width="match_parent"
@@ -14,8 +15,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.nihaskalam.progressbuttonlibrary.CircularProgressButton
         android:id="@+id/navigation"
@@ -24,9 +27,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:onClick="onClickFirstBtn"
         android:textColor="@color/text_state_selector"
         android:textSize="15sp"
-        android:onClick="onClickFirstBtn"
         app:layout_constraintBottom_toBottomOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,20 +44,19 @@
         app:pb_selectorComplete="@color/idle_state_selector"
         app:pb_selectorError="@color/error_state_selector"
         app:pb_selectorIdle="@color/idle_state_selector"
-        app:pb_textColorAfterClick="@color/colorWhite"
-        app:pb_textIdle="@string/navi"
         app:pb_textCancel="@string/navi"
+        app:pb_textColorAfterClick="@color/colorWhite"
         app:pb_textComplete="@string/navi"
-        />
+        app:pb_textIdle="@string/navi" />
 
 
     <RelativeLayout
         android:id="@+id/badge2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
@@ -79,5 +81,22 @@
             android:textSize="8sp"
             android:textStyle="bold" />
     </RelativeLayout>
+
+    <br.com.bloder.magic.view.MagicButton
+        android:id="@+id/dining_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:button_icon="@drawable/ic_time"
+        app:button_icon_height="25dp"
+        app:button_icon_width="25dp"
+        app:expandable_area_color="#2f83de"
+        app:hide_text="Dining Hours"
+        app:icon_button_color="#ced0d4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:magic_button_size="50dp" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -14,4 +14,5 @@ public class VenueNames {
     public static final String JAS="Jasmine Food Court";
     public static final String NOBELGLS= "Nobel/GLS";
     public static final String SAC_COURT="SAC Food Court";
+    public static final String EAST_ISLAND ="East Side Island Soul";
 }

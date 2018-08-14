@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import tlab.sbu_foodie.Activities.MenuActivity;
 import tlab.sbu_foodie.DataHandler.ExtendedDataHolder;
 import tlab.sbu_foodie.R;
@@ -18,6 +20,7 @@ import static tlab.sbu_foodie.VenueNames.EAST_COCINA;
 import static tlab.sbu_foodie.VenueNames.EAST_DELI;
 import static tlab.sbu_foodie.VenueNames.EAST_DINE;
 import static tlab.sbu_foodie.VenueNames.EAST_GRIL;
+import static tlab.sbu_foodie.VenueNames.EAST_ISLAND;
 import static tlab.sbu_foodie.VenueNames.EAST_ITALIAN;
 
 /**
@@ -27,6 +30,18 @@ import static tlab.sbu_foodie.VenueNames.EAST_ITALIAN;
 public class BottomSheetDialog extends BottomSheetDialogFragment {
     private Point screenPosition;
     private StringBuilder menuRead;
+    @BindView(R.id.east_dine)
+    View eastDine;
+    @BindView(R.id.east_cocina)
+    View eastCocina;
+    @BindView(R.id.east_deli)
+    View eastDeli;
+    @BindView(R.id.east_grill)
+    View eastGril;
+    @BindView(R.id.east_italian)
+    View eastItalian;
+    @BindView(R.id.east_island)
+    View eastSoul;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,20 +69,19 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.bottomsheet, container, false);
-        View eastDine = root.findViewById(R.id.east_dine);
-        View eastCocina = root.findViewById(R.id.east_cocina);
-        View eastDeli = root.findViewById(R.id.east_deli);
-        View eastGril = root.findViewById(R.id.east_grill);
-        View eastItalian = root.findViewById(R.id.east_italian);
+        ButterKnife.bind(this,root);
+
         eastDine.setOnClickListener(view -> {
             presentActivity(screenPosition, EAST_DINE);
             dismiss();
         });
         eastCocina.setOnClickListener(view -> {
             presentActivity(screenPosition, EAST_COCINA);
+            dismiss();
+        });
+        eastSoul.setOnClickListener(view -> {
+            presentActivity(screenPosition, EAST_ISLAND);
             dismiss();
         });
 

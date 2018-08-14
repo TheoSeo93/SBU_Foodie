@@ -82,7 +82,29 @@
             android:fontFamily="@font/ubuntu"
             android:text="@string/gril_desc" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/east_island"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/east_island"
+            android:textColor="#444"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/island_desc" />
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/east_cocina"
         android:layout_width="match_parent"

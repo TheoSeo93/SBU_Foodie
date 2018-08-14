@@ -6,49 +6,33 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.TextView;
 
-import com.ramotion.fluidslider.FluidSlider;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import pub.devrel.easypermissions.EasyPermissions;
 import tlab.sbu_foodie.Adapter.RecyclerViewAdapter;
 import tlab.sbu_foodie.Adapter.RowElement;
-import tlab.sbu_foodie.MenuDisplayHandler.PercentageToTimeConvertor;
-import tlab.sbu_foodie.MenuDisplayHandler.PeriodDefiner;
+import tlab.sbu_foodie.DataHandler.TSDProcessor;
 import tlab.sbu_foodie.MenuDisplayHandler.PriorityComparator;
 import tlab.sbu_foodie.R;
-import tlab.sbu_foodie.DataHandler.TSDProcessor;
 
-import static java.util.Calendar.DAY_OF_WEEK;
-import static tlab.sbu_foodie.VenueNames.ADMIN_CART;
-import static tlab.sbu_foodie.VenueNames.EAST_COCINA;
-import static tlab.sbu_foodie.VenueNames.EAST_DELI;
-import static tlab.sbu_foodie.VenueNames.EAST_DINE;
-import static tlab.sbu_foodie.VenueNames.EAST_GRIL;
-import static tlab.sbu_foodie.VenueNames.EAST_ITALIAN;
-import static tlab.sbu_foodie.VenueNames.JAS;
-import static tlab.sbu_foodie.VenueNames.NOBELGLS;
-import static tlab.sbu_foodie.VenueNames.ROTH_COURT;
-import static tlab.sbu_foodie.VenueNames.SAC_COURT;
-import static tlab.sbu_foodie.VenueNames.TABLER_CART;
-import static tlab.sbu_foodie.VenueNames.WEST_SIDE;
 
 public class MenuActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     public static final String EXTRA_CIRCULAR_REVEAL_X = "EXTRA_CIRCULAR_REVEAL_X";
@@ -56,182 +40,91 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
     public static final String MENU = "";
     public static final String venue = "";
     private static final String TAG = "";
-    private CardView cvAdd;
+
     private TSDProcessor tsdProcessor;
     private String venueName = "";
-    private View rootLayout;
+
     private int revealX;
     private int revealY;
-    private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
-    private TextView revenueText;
+
     private ArrayList<RowElement> menuList;
-    public static boolean isWeekend() {
-        Date d = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(d);
-        return c.get(DAY_OF_WEEK) == Calendar.SATURDAY || c.get(DAY_OF_WEEK) == Calendar.SUNDAY;
-    }
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigationView;
 
-        @Override
-        protected void onCreate (Bundle savedInstanceState){
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_menu);
-            cvAdd = findViewById(R.id.cv_add);
-            final Intent intent = getIntent();
-            rootLayout = findViewById(R.id.root);
-            menuList = new ArrayList<>();
-            revenueText = findViewById(R.id.revenue);
-            venueName = intent.getStringExtra(venue);
-            revenueText.setText(venueName);
-            revenueText.setTextColor(Color.BLACK);
-            if (savedInstanceState == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
-                    intent.hasExtra(EXTRA_CIRCULAR_REVEAL_X) &&
-                    intent.hasExtra(EXTRA_CIRCULAR_REVEAL_Y)) {
-                rootLayout.setVisibility(View.INVISIBLE);
-                revealX = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_X, 0);
-                revealY = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_Y, 0);
+    @BindView(R.id.cv_add)
+    CardView cvAdd;
+    @BindView(R.id.root)
+    View rootLayout;
+    @BindView(R.id.revenue)
+    TextView revenueText;
+    @BindView(R.id.recyclerview)
+    RecyclerView recyclerView;
 
-                ViewTreeObserver viewTreeObserver = rootLayout.getViewTreeObserver();
-                if (viewTreeObserver.isAlive()) {
-                    viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                        @Override
-                        public void onGlobalLayout() {
-                            revealActivity(revealX, revealY);
-                            rootLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                        }
-                    });
-                }
-            } else {
-                rootLayout.setVisibility(View.VISIBLE);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        ButterKnife.bind(this);
+
+        final Intent intent = getIntent();
+        menuList = new ArrayList<>();
+        venueName = intent.getStringExtra(venue);
+        revenueText.setText(venueName);
+        revenueText.setTextColor(Color.BLACK);
+        if (savedInstanceState == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+                intent.hasExtra(EXTRA_CIRCULAR_REVEAL_X) &&
+                intent.hasExtra(EXTRA_CIRCULAR_REVEAL_Y)) {
+            rootLayout.setVisibility(View.INVISIBLE);
+            revealX = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_X, 0);
+            revealY = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_Y, 0);
+
+            ViewTreeObserver viewTreeObserver = rootLayout.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        revealActivity(revealX, revealY);
+                        rootLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
             }
-
-            // Java
-            final FluidSlider slider = findViewById(R.id.fluidSlider);
-
-            slider.setBeginTrackingListener(new Function0<Unit>() {
-                @Override
-                public Unit invoke() {
-                    Log.d("D", "setBeginTrackingListener");
-                    return Unit.INSTANCE;
-                }
-            });
-            String startText = "";
-            String endText = "";
-            switch (venueName) {
-                case WEST_SIDE:
-                    if (isWeekend()) {
-                        startText = "Brunch";
-                        endText = "Midnight";
-                    } else {
-                        startText = "Breakfast";
-                        endText = "Midnight";
-                    }
-                    break;
-                case ROTH_COURT:
-                    startText = "Lunch";
-                    endText = "Dinner";
-                    break;
-                case ADMIN_CART:
-                    startText = "Breakfast";
-                    endText = "Lunch";
-                    break;
-                case TABLER_CART:
-                    if (isWeekend()) {
-                        startText = "Dinner";
-                        endText = "Dinner";
-                    } else {
-                        startText = "Breakfast";
-                        endText = "Dinner";
-                    }
-                    break;
-                case EAST_COCINA:
-                    startText = "Lunch";
-                    endText = "Midnight";
-                    break;
-                case EAST_DELI:
-                    startText = "Lunch";
-                    endText = "Dinner";
-                    break;
-                case EAST_DINE:
-                    if (isWeekend()) {
-                        startText = "Brunch";
-                        endText = "Midnight";
-                    } else {
-                        startText = "Breakfast";
-                        endText = "Midnight";
-                    }
-                    break;
-                case EAST_GRIL:
-                    startText = "Breakfast";
-                    endText = "Midnight";
-                    break;
-                case EAST_ITALIAN:
-                    startText = "Lunch";
-                    endText = "Midnight";
-                    break;
-                case SAC_COURT:
-                    if (isWeekend()) {
-                        startText = "Lunch";
-                        endText = "Lunch";
-                    } else {
-                        startText = "Breakfast";
-                        endText = "Dinner";
-                    }
-                    break;
-                case NOBELGLS:
-                    startText = "Breakfast";
-                    endText = "Dinner";
-                    break;
-                case JAS:
-                    startText = "Lunch";
-                    endText = "Dinner";
-                    break;
-            }
-            PercentageToTimeConvertor percentageToTimeConvertor = new PercentageToTimeConvertor();
-            PeriodDefiner periodDefiner = new PeriodDefiner(venueName, isWeekend());
-            slider.setStartText(startText);
-            slider.setEndText(endText);
-            recyclerView = findViewById(R.id.recyclerview);
-            tsdProcessor = new TSDProcessor();
-            slider.setPositionListener(pos -> {
-                final String value = String.valueOf(percentageToTimeConvertor.convertIntoMinutes((int) (pos * 100), venueName, isWeekend()));
-                slider.setBubbleText(value);
-                return Unit.INSTANCE;
-            });
-            slider.setEndTrackingListener(new Function0<Unit>() {
-                @Override
-                public Unit invoke() {
-                    String periodName = periodDefiner.computePeriod(percentageToTimeConvertor.converToMinutes(slider.getPosition() * 100, venueName, isWeekend()), false);
-                    if(slider.getPosition()==1.0f)
-                        periodName="closed";
-
-                    InitializeRecyclerView(periodName, venueName);
-                    return Unit.INSTANCE;
-                }
-            });
-            slider.setPosition(percentageToTimeConvertor.reverseConvert(venueName, isWeekend()) / 100.0f);
-            String periodName = periodDefiner.computePeriod(0, true);
-            if(slider.getPosition()==1.0f)
-                periodName="closed";
-
-            InitializeRecyclerView(periodName, venueName);
-
+        } else {
+            rootLayout.setVisibility(View.VISIBLE);
         }
 
+        tsdProcessor = new TSDProcessor();
+        List<String> periods = tsdProcessor.getPeriods(venueName);
+        Menu periodMenu = bottomNavigationView.getMenu();
+
+        for (int i = 0; i < periods.size(); i++) {
+            periodMenu.add(Menu.NONE, periods.size(), Menu.NONE, periods.get(i))
+                    .setIcon(R.drawable.ic_bottom_navi);
+        }
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                String period = (String) item.getTitle();
+                InitializeRecyclerView(period, venueName);
+                return true;
+            }
+        });
+        if (periods.size() != 0)
+            InitializeRecyclerView(periods.get(0), venueName);
+        else {
+            InitializeRecyclerView("Closed", venueName);
+        }
+
+    }
 
     private void InitializeRecyclerView(String period, String venueName) {
         menuList.clear();
-        menuList=null;
+        menuList = null;
         menuList = tsdProcessor.processString(venueName, period);
-        if(menuList.size()==0){
-            revenueText.setText(venueName+"\t"+"(Closed)");
-            revenueText.setTextColor(Color.BLACK);
-        } else {
-            revenueText.setText(venueName);
-            revenueText.setTextColor(Color.BLACK);
-        }
-
+        revenueText.setText(venueName);
+        if (period.equals("Closed"))
+            revenueText.setText(venueName + "\t" + "(Closed)");
+        revenueText.setTextColor(Color.BLACK);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         Collections.sort(menuList, new PriorityComparator());
         recyclerViewAdapter = new RecyclerViewAdapter(getApplicationContext(), menuList, venueName);
@@ -279,6 +172,7 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
     @Override
     public void onBackPressed() {
         animateRevealClose();
+        super.onBackPressed();
     }
 
     @Override

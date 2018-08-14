@@ -34,6 +34,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -72,6 +73,8 @@ import com.google.gson.reflect.TypeToken;
 import com.nihaskalam.progressbuttonlibrary.CircularProgressButton;
 import com.roughike.swipeselector.SwipeItem;
 import com.roughike.swipeselector.SwipeSelector;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -86,7 +89,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
+import br.com.bloder.magic.view.MagicButton;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -96,15 +103,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import tlab.sbu_foodie.UIComponent.BottomSheetDialog;
 import tlab.sbu_foodie.BuildConfig;
 import tlab.sbu_foodie.DataHandler.ExtendedDataHolder;
+import tlab.sbu_foodie.DataHandler.LatLngData;
+import tlab.sbu_foodie.DataHandler.TSDProcessor;
 import tlab.sbu_foodie.GoogleMapRoute.MapAnimator;
 import tlab.sbu_foodie.GoogleMapRoute.getPolyline;
 import tlab.sbu_foodie.MenuDisplayHandler.PriorityGenerator;
 import tlab.sbu_foodie.R;
 import tlab.sbu_foodie.TwitterRSS.HTTPDataHandler;
 import tlab.sbu_foodie.TwitterRSS.RSSObject;
+import tlab.sbu_foodie.UIComponent.BottomSheetDialog;
 
 import static tlab.sbu_foodie.VenueNames.ADMIN_CART;
 import static tlab.sbu_foodie.VenueNames.JAS;
@@ -118,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationSettingsRequest mLocationSettingsRequest;
     private SettingsClient mSettingsClient;
     private static final int REQUEST_CHECK_SETTINGS = 0x1;
-
     private final static String KEY_REQUESTING_LOCATION_UPDATES = "requesting-location-updates";
     private final static String KEY_LOCATION = "location";
     private static final long UPDATE_INTERVAL_IN_MILLISECONDS = 3000;
@@ -128,16 +136,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public static final String EAST = "East Side Dining Hall";
 
     //Latitudes and longitudes of each places to be shown on the map
-    private final LatLng WEST_DINING = new LatLng(40.9133375, -73.1304427);
-    private final LatLng EAST_DINING = new LatLng(40.9169623, -73.12085330000002);
-    private final LatLng JASMINE = new LatLng(40.9158895, -73.11976759999999);
-    private final LatLng GLS = new LatLng(40.9121319, -73.12993599999999);
-    private final LatLng SAC = new LatLng(40.9142667, -73.124188);
-    private final LatLng ADMIN = new LatLng(40.9147317, -73.12030019999997);
-    private final LatLng ROTH = new LatLng(40.9107867, -73.12382980000001);
-    private final LatLng TABLER = new LatLng(40.9098733, -73.1270826);
+    private String pdfUrl = null;
     private static final String TAG = "";
-
+    private LatLngData latLngData;
     private HashMap<String, LatLng> latLngHashMap;
     private FusedLocationProviderClient mFusedLocationClient;
     private Location currentLocation;
@@ -152,45 +153,99 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LatLng dest;
     private boolean navigationMode;
     private LocationCallback mLocationCallback;
-    private CircularProgressButton navigation;
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 34;
     private LocationRequest mLocationRequest;
-    private View rootLayout;
-    private Button alert;
-    private TextView alertBadge;
     private final String RSS_LINK = "https://twitrss.me/twitter_user_to_rss/?user=SBU_Eats";
     private final String RSS_TO_JSONAPI = "https://api.rss2json.com/v1/api.json?rss_url=";
     private SharedPreferences prefs;
     private Gson gson = new Gson();
     private RSSObject rssObject;
+    private boolean freshmen;
+    private boolean secondStart;
+    private boolean newToSBU;
+
+    private final ReentrantLock locker = new ReentrantLock();
+    @BindView(R.id.main_activity_container)
+    View rootLayout;
+    @BindView(R.id.alert)
+    Button alert;
+    @BindView(R.id.badge)
+    TextView alertBadge;
+    @BindView(R.id.dining_hour)
+    MagicButton diningHour;
+
+    CircularProgressButton navigation;
 
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        latLngHashMap = new HashMap<>();
-        alert = findViewById(R.id.alert);
-        alertBadge = findViewById(R.id.badge);
-        alert.setAlpha(0.1f);
+        SharedPreferences userInfo = getSharedPreferences("userInfo", MODE_PRIVATE);
+        secondStart = userInfo.getBoolean("secondStart", false);
+        freshmen = userInfo.getBoolean("freshmen", false);
+        if (!secondStart)
+            new FancyGifDialog.Builder(this)
+                    .setTitle("Welcome to SBU Foodies !")
+                    .setMessage("New to Stony Brook University?")
+                    .setNegativeBtnText("No")
+                    .setPositiveBtnBackground("#FF4081")
+                    .setPositiveBtnText("Yes")
+                    .setNegativeBtnBackground("#FFA9A7A8")
+                    .setGifResource(R.drawable.zombie_pizza)   //Pass your Gif here
+                    .isCancellable(true)
+                    .OnPositiveClicked(new FancyGifDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            newToSBU = true;
+                            secondStart = true;
+                            SharedPreferences test = getSharedPreferences("userInfo", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = test.edit();
+                            editor.putBoolean("freshmen", true);
+                            editor.putBoolean("secondStart", true);
+                            editor.apply();
+                            Intent intent = getIntent();
+                            finish();
+                            startActivity(intent);
+                        }
+                    })
+                    .OnNegativeClicked(new FancyGifDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            newToSBU = false;
+                            secondStart = true;
+                            SharedPreferences test = getSharedPreferences("userInfo", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = test.edit();
+                            editor.putBoolean("freshmen", false);
+                            editor.putBoolean("secondStart", true);
+                            editor.apply();
+                        }
+                    })
+                    .build();
 
+
+        if (freshmen) {
+            setContentView(R.layout.activity_main);
+            navigation = findViewById(R.id.navigation);
+        } else {
+            setContentView(R.layout.activity_main_default);
+        }
+        latLngHashMap = new HashMap<>();
+        ButterKnife.bind(this);
+        latLngData = new LatLngData();
         //Load the three-most-recent twitter feeds from https://twitter.com/sbu_eats
         //If the argument is null, then RSS gets loaded only for displaying the number of updated feed on the alert badge
         loadRSS(null);
-
+        alert.setAlpha(0.1f);
         //Display twitter feeds on the popup window
         alert.setOnClickListener(ae -> {
             View v = displayPopupWindow(alert);
             loadRSS(v);
         });
-        rootLayout = findViewById(R.id.main_activity_container);
-
-        //Button for navigation mode
-        navigation = findViewById(R.id.navigation);
-        navigation.setSweepDuration(10000);
-        navigation.setIndeterminateProgressMode(true);
-
+        if (freshmen) {
+            //Button for navigation mode
+            navigation.setSweepDuration(10000);
+            navigation.setIndeterminateProgressMode(true);
+        }
         mSettingsClient = LocationServices.getSettingsClient(this);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         createLocationCallback();
@@ -202,14 +257,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
         places = getResources().obtainTypedArray(R.array.places);
 
-        latLngHashMap.put(WEST_SIDE, WEST_DINING);
-        latLngHashMap.put(EAST, EAST_DINING);
-        latLngHashMap.put(JAS, JASMINE);
-        latLngHashMap.put(NOBELGLS, GLS);
-        latLngHashMap.put(SAC_COURT, SAC);
-        latLngHashMap.put(ADMIN_CART, ADMIN);
-        latLngHashMap.put(ROTH_COURT, ROTH);
-        latLngHashMap.put(TABLER_CART, TABLER);
+        latLngHashMap.put(WEST_SIDE, latLngData.getWEST_DINING());
+        latLngHashMap.put(EAST, latLngData.getEAST_DINING());
+        latLngHashMap.put(JAS, latLngData.getJASMINE());
+        latLngHashMap.put(NOBELGLS, latLngData.getGLS());
+        latLngHashMap.put(SAC_COURT, latLngData.getSAC());
+        latLngHashMap.put(ADMIN_CART, latLngData.getADMIN());
+        latLngHashMap.put(ROTH_COURT, latLngData.getROTH());
+        latLngHashMap.put(TABLER_CART, latLngData.getTABLER());
 
         //Firebase reference where the dining menu file is being stored.
         menuFileRef = FirebaseStorage.getInstance().getReference().child("test.txt/test.txt");
@@ -218,6 +273,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Reads the text file by its URL
         try {
             downloadWithURL();
+            diningHour.setMagicButtonClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("유얼엘",pdfUrl);
+                    if (pdfUrl != null && pdfUrl.length() != 0) {
+                        WebView theWebPage = new WebView(getBaseContext());
+                        theWebPage.getSettings().setJavaScriptEnabled(true);
+                        setContentView(theWebPage);
+                        theWebPage.loadUrl(pdfUrl);
+                    }
+                }
+            });
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -337,10 +405,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Animator circularReveal = ViewAnimationUtils.createCircularReveal(rootLayout, x, y, 0, finalRadius);
             circularReveal.setDuration(1700);
             circularReveal.setInterpolator(new AccelerateInterpolator());
-
             // make the view visible and start the animation
             rootLayout.setVisibility(View.VISIBLE);
             circularReveal.start();
+
         }
     }
 
@@ -363,12 +431,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onResume();
         // Within {@code onPause()}, we remove location updates. Here, we resume receiving
         // location updates if the user has requested them.
-        if (mRequestingLocationUpdates && checkPermissions()) {
-            startLocationUpdates();
-        } else if (!checkPermissions()) {
-            requestPermissions();
+        if(freshmen) {
+            if (mRequestingLocationUpdates && checkPermissions()) {
+                startLocationUpdates();
+            } else if (!checkPermissions()) {
+                requestPermissions();
+            }
         }
-
     }
 
     public LatLng getOrigin() {
@@ -464,9 +533,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param text The Snackbar text.
      */
     private void showSnackbar(final String text) {
-        View container = findViewById(R.id.main_activity_container);
-        if (container != null) {
-            Snackbar.make(container, text, Snackbar.LENGTH_LONG).show();
+
+        if (rootLayout != null) {
+            Snackbar.make(rootLayout, text, Snackbar.LENGTH_LONG).show();
         }
     }
 
@@ -706,22 +775,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(final GoogleMap googleMap) {
         map = googleMap;
-
-        map.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
-            @Override
-            public boolean onMyLocationButtonClick() {
-                if (!checkPermissions()) {
-                    requestPermissions();
-                } else {
-                    getLastLocation();
+        if (freshmen) {
+            map.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+                @Override
+                public boolean onMyLocationButtonClick() {
+                    if (!checkPermissions()) {
+                        requestPermissions();
+                    } else {
+                        getLastLocation();
+                    }
+                    map.setMinZoomPreference(12);
+                    return false;
                 }
-                map.setMinZoomPreference(12);
-                return false;
-            }
 
 
-        });
-
+            });
+        }
         map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
@@ -741,47 +810,50 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
         initPlacesMarker();
-        map.moveCamera(CameraUpdateFactory.newLatLng(SAC));
+        map.moveCamera(CameraUpdateFactory.newLatLng(latLngData.getSAC()));
         map.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+        if (freshmen) {
+            map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                @Override
+                public boolean onMarkerClick(Marker marker) {
 
-        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
+                    final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                    if (!checkPermissions() && manager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+                        startLocationUpdates();
 
-                final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                if (!checkPermissions() && manager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-                    startLocationUpdates();
+                    double latitude = -1;
+                    double longitude = -1;
+                    clickedMarker = marker;
+                    if (currentLocation != null) {
+                        latitude = currentLocation.getLatitude();
+                        longitude = currentLocation.getLongitude();
+
+                    }
+                    marker.showInfoWindow();
 
 
-                double latitude = -1;
-                double longitude = -1;
-                clickedMarker = marker;
-                if (currentLocation != null) {
-                    latitude = currentLocation.getLatitude();
-                    longitude = currentLocation.getLongitude();
+                    ArrayList<LatLng> listLocsToDraw = new ArrayList<>();
+                    listLocsToDraw.add(marker.getPosition());
 
+                    listLocsToDraw.add(new LatLng(latitude, longitude));
+                    if (map == null) {
+                        return false;
+                    }
+                    if (listLocsToDraw.size() < 2) {
+                        return false;
+                    }
+                    origin = new LatLng(latitude, longitude);
+                    dest = marker.getPosition();
+                    // Getting URL to the Google Directions API
+                    setUpPolyLine();
+                    marker.showInfoWindow();
+
+                    return true;
                 }
-                marker.showInfoWindow();
 
+            });
+        }
 
-                ArrayList<LatLng> listLocsToDraw = new ArrayList<>();
-                listLocsToDraw.add(marker.getPosition());
-
-                listLocsToDraw.add(new LatLng(latitude, longitude));
-                if (map == null) {
-                    return false;
-                }
-                if (listLocsToDraw.size() < 2) {
-                    return false;
-                }
-                origin = new LatLng(latitude, longitude);
-                dest = marker.getPosition();
-                // Getting URL to the Google Directions API
-                setUpPolyLine();
-                marker.showInfoWindow();
-                return true;
-            }
-        });
 
     }
 
@@ -952,6 +1024,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                 while ((inputLine = in.readLine()) != null)
                                     menuRead.append(inputLine).append(System.lineSeparator());
                                 in.close();
+                                TSDProcessor tsdProcessor = new TSDProcessor();
+                                pdfUrl = tsdProcessor.getTimeSchedule(menuRead.toString());
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
