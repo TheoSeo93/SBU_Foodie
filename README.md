@@ -12,6 +12,6 @@ https://github.com/TheoSeo93/PythonCrawler
 
 Rating System in Gif             | Image
 :-------------------------:|:-------------------------:
-![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif)
 
 
