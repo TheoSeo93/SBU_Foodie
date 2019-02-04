@@ -15,3 +15,8 @@ Image             | Rating System in Gif
 ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif)
 
 
+## Twitter RSS
+Image             | Twitter RSS in Gif
+:-------------------------:|:-------------------------:
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p1.jpg) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rss.gif)
+
