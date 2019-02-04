@@ -10,8 +10,8 @@ https://github.com/TheoSeo93/PythonCrawler
 
 ##Rate System
 
-Rating System in Gif             | Image
+Image             | Rating System in Gif
 :-------------------------:|:-------------------------:
-![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif)
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg|width=100) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif)
 
 
