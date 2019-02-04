@@ -8,4 +8,7 @@ Currently unpublished because the school has changed the website where I get dat
 Please see this repository!
 https://github.com/TheoSeo93/PythonCrawler
 
+#Rate System
+![alt txt](https://media.giphy.com/media/9PekRQtn8Qc4wmk6tQ/giphy.gif)
+
 
