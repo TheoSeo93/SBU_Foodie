@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">SBU_Foodie</string>
-    <string name="submit">Navigation Mode</string>
     <string name="no_location_detected">
         No location detected. Make sure location is enabled on the device.
     </string>
@@ -8,17 +7,13 @@
     <string name="permission_denied_explanation">Permission was denied, but is needed for extra
         functionality.</string>
     <string name="settings">Settings</string>
-    <string name="east_dine">East Side Dine-In</string>
     <string name="dine_desc">salad bar, pizza, pasta, burgers, international entrées</string>
-    <string name="east_italian">East Side Italian</string>
     <string name="italian_desc">Pizza, pasta, calzones and stromboli</string>
-    <string name="east_cocina">East Side Cocina</string>
     <string name="cocina_desc">Traditional made-to-order deli </string>
-    <string name="east_deli">East Side Deli</string>
     <string name="deli_desc">Burritos, tacos, bowls and quesadillas built to order</string>
-    <string name="east_gril">East Side Grill</string>
     <string name="gril_desc">Burgers, tenders, fries and daily grill specials</string>
     <string name="navi">Navigation Mode</string>
-    <string name="east_island">East Side Island Soul</string>
+    <string name="kosher_desc">New York-style glatt kosher deli menu, grill favorites, soups, sides and salads</string>
+    <string name="hala_desc">Gyro, falafel, chicken, shawarma, pitas, platters, salad, fiesta fries, hummus, baba ganoush and tabbouleh</string>
     <string name="island_desc">Authentic Caribbean fare by Jamaican Cafe</string>
 </resources>

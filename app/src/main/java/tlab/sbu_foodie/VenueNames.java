@@ -7,8 +7,10 @@ public class VenueNames {
     public static final String ADMIN_CART="Admin Cart";
     public static final String TABLER_CART="Tabler Cafe";
     public static final String EAST_COCINA= "East Side Cocina";
-    public static final String EAST_DELI="East Side Deli";
+    public static final String EAST_DELI="East Meets West Deli";
     public static final String EAST_DINE="East Side Dine-In";
+    public static final String EAST_KOSHER="East Side Kosher";
+    public static final String EAST_HALAL ="East Side Halal";
     public static final String EAST_GRIL="East Side Grill";
     public static final String EAST_ITALIAN="East Side Italian";
     public static final String JAS="Jasmine Food Court";

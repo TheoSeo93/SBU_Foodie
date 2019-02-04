@@ -7,7 +7,7 @@ package tlab.sbu_foodie.Adapter;
 public class RowElement {
 
     private String date;
-    private String revenue;
+    private String venue;
     private String period;
     private String price="";
     private String name;
@@ -21,9 +21,9 @@ public class RowElement {
 
 
     private String comboMenu;
-    public RowElement(String date, String revenue, String period,String name, String price){
+    public RowElement(String date, String venue, String period,String name, String price){
         this.date=date;
-        this.revenue=revenue;
+        this.venue =venue;
         this.period=period;
         this.price=price;
         this.name=name;
@@ -37,18 +37,6 @@ public class RowElement {
     }
     public String getName() {
         return name;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getRevenue() {
-        return revenue;
-    }
-
-    public String getPeriod() {
-        return period;
     }
 
     public String getPrice() {

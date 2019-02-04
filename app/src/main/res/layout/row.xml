@@ -37,10 +37,10 @@
             android:id="@+id/combo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu"
             android:layout_weight="1"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:fontFamily="@font/ubuntu"
             android:paddingLeft="6dp" />
     </LinearLayout>
 
@@ -54,9 +54,9 @@
             android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu"
             android:layout_weight="1"
             android:textSize="15sp"
+            android:fontFamily="@font/ubuntu"
             android:textStyle="bold"
             android:textAlignment="center" />
     </LinearLayout>

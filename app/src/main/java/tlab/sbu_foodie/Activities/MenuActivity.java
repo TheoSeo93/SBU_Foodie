@@ -3,9 +3,11 @@ package tlab.sbu_foodie.Activities;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -18,11 +20,18 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,9 +46,7 @@ import tlab.sbu_foodie.R;
 public class MenuActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     public static final String EXTRA_CIRCULAR_REVEAL_X = "EXTRA_CIRCULAR_REVEAL_X";
     public static final String EXTRA_CIRCULAR_REVEAL_Y = "EXTRA_CIRCULAR_REVEAL_Y";
-    public static final String MENU = "";
     public static final String venue = "";
-    private static final String TAG = "";
 
     private TSDProcessor tsdProcessor;
     private String venueName = "";
@@ -60,6 +67,8 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
     TextView revenueText;
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
+    @BindView(R.id.ratingBar)
+    RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +81,15 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
         venueName = intent.getStringExtra(venue);
         revenueText.setText(venueName);
         revenueText.setTextColor(Color.BLACK);
+        SharedPreferences sPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sPrefs.edit();
+        float rating = sPrefs.getFloat("rating" + venueName, 0);
+
+        String id = sPrefs.getString(venueName, null);
+        if (id == null) {
+            editor.putString(venueName, UUID.randomUUID().toString());
+            editor.commit();
+        }
         if (savedInstanceState == null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
                 intent.hasExtra(EXTRA_CIRCULAR_REVEAL_X) &&
                 intent.hasExtra(EXTRA_CIRCULAR_REVEAL_Y)) {
@@ -92,7 +110,26 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
         } else {
             rootLayout.setVisibility(View.VISIBLE);
         }
+        if(rating!=0)
+        ratingBar.setRating(rating);
 
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+
+                String id = sPrefs.getString(venueName, null);
+                Map<String, Object> data = new HashMap<>();
+                data.put("venue", venueName);
+                data.put("id", id);
+                data.put("rating", v);
+                editor.putFloat("rating" + venueName, v);
+                editor.commit();
+                FirebaseFirestore.getInstance().collection("rating")
+                        .document(id)
+                        .set(data);
+                Toast.makeText(getApplicationContext(),"Your rating is set to "+v ,Toast.LENGTH_SHORT).show();
+            }
+        });
         tsdProcessor = new TSDProcessor();
         List<String> periods = tsdProcessor.getPeriods(venueName);
         Menu periodMenu = bottomNavigationView.getMenu();
@@ -138,7 +175,7 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
             float finalRadius = (float) (Math.max(rootLayout.getWidth(), rootLayout.getHeight()) * 1.1);
             // create the animator for this view (the start radius is zero)
             Animator circularReveal = ViewAnimationUtils.createCircularReveal(rootLayout, x, y, 0, finalRadius);
-            circularReveal.setDuration(400);
+            circularReveal.setDuration(200);
             circularReveal.setInterpolator(new AccelerateInterpolator());
 
             // make the view visible and start the animation
@@ -157,7 +194,6 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
                 public void onAnimationEnd(Animator animation) {
                     cvAdd.setVisibility(View.INVISIBLE);
                     super.onAnimationEnd(animation);
-                    MenuActivity.super.onBackPressed();
                 }
 
                 @Override
@@ -172,7 +208,11 @@ public class MenuActivity extends AppCompatActivity implements EasyPermissions.P
     @Override
     public void onBackPressed() {
         animateRevealClose();
-        super.onBackPressed();
+        Intent i = new Intent(MenuActivity.this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
+        finish();
     }
 
     @Override

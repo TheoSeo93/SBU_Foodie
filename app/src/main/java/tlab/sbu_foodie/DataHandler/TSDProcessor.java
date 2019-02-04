@@ -136,13 +136,13 @@ public final class TSDProcessor {
                 if (elements.length >= 3) {
                     if (elements[1].equals(venueType) && elements[0].equals(currentDate) && elements[2].equals(periodName)) {
                         String date = elements[0];
-                        String revenue = elements[1];
+                        String venue = elements[1];
                         String period = elements[2];
                         String name = elements[3];
                         String price = "";
                         if (elements.length >= 5)
                             price = elements[4];
-                        rows.add(new RowElement(date, revenue, period, name, price));
+                        rows.add(new RowElement(date, venue, period, name, price));
                     }
                 }
             }
@@ -165,9 +165,6 @@ public final class TSDProcessor {
             }
 
         }
-        return rows;
-    }
-    public ArrayList<RowElement> getRows() {
         return rows;
     }
 

@@ -9,13 +9,13 @@ android {
         applicationId "tlab.sbu_foodie"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 9
-        versionName "1.5"
+        versionCode 20
+        versionName "2.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
-
             minifyEnabled false
             resValue "string", "google_maps_key", "AIzaSyAAtVclGWxnnf46kP4R7iweASSWfx31VP0"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -36,35 +36,30 @@ android {
 }
 
 dependencies {
-annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-implementation fileTree(include: ['*.jar'], dir: 'libs')
-implementation 'com.android.support:appcompat-v7:27.1.1'
-implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-implementation 'com.google.android.gms:play-services-maps:15.0.1'
-implementation 'com.google.android.gms:play-services-location:15.0.1'
-implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-implementation 'com.google.firebase:firebase-storage:16.0.1'
-testImplementation 'junit:junit:4.12'
-androidTestImplementation 'com.android.support.test:runner:1.0.2'
-androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-implementation 'com.google.code.gson:gson:2.8.4'
-implementation 'com.android.support:cardview-v7:27.1.1'
-implementation 'com.android.support:recyclerview-v7:27.1.1'
-implementation 'com.sackcentury:shinebutton:0.2.0'
-implementation 'pub.devrel:easypermissions:0.3.0'
-implementation 'com.android.support:design:27.1.1'
-implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
-implementation 'com.google.android.gms:play-services-location:15.0.1'
-implementation 'com.github.GrenderG:Toasty:1.3.0'
-implementation 'com.nihaskalam.android:progress-button:1.0.1'
-implementation 'com.roughike:swipe-selector:1.0.6'
-implementation 'com.jakewharton:butterknife:8.8.1'
-implementation 'org.projectlombok:lombok:1.16.20'
-annotationProcessor 'org.projectlombok:lombok:1.16.20'
-implementation 'com.github.Shashank02051997:FancyGifDialog-Android:1.1'
-implementation 'com.github.bloder:magic:1.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.google.code.gson:gson:2.8.4'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'pub.devrel:easypermissions:0.3.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.nihaskalam.android:progress-button:1.0.1'
+    implementation 'com.roughike:swipe-selector:1.0.6'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.github.bloder:magic:1.1'
+    implementation 'com.google.firebase:firebase-firestore:16.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

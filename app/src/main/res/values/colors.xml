@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#46A4FF</color>
-    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="bubbleTextColor">#ffffff</color>
-    <color name="bubbleColor">#23272a</color>
-    <color name="cardViewBackground">#009688</color>
-    <color name="cardView">#181818</color>
-    <color name="path">#46A4FF</color>
     <color name="white">#ffffff</color>
     <color name="colorButtonCompleteState">#19CC95</color>
-    <color name="colorProgressIndicatorBackground">#BBBBBB</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorStroke">#19CC95</color>
-    <color name="colorRed">#ffcd0a51</color>
+    <color name="colorRed">#ffcd0a51</color>>
+    <color name="black">#444</color>
 </resources>

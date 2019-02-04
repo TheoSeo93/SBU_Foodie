@@ -27,10 +27,6 @@ public class PriorityGenerator {
                 int priority = Integer.valueOf(list.get(1).trim());
                 if(name.contains("sauce")||name.contains("Sauce"))
                     priority=100;
-                else if(name.contains("Char Siu Pork"))
-                    priority=0;
-                else if(name.contains("Buffalo Chicken"))
-                    priority=1;
                 data.put(name, priority);
             });
         } else {
@@ -42,10 +38,6 @@ public class PriorityGenerator {
                     int priority = Integer.valueOf(elements[1].trim());
                     if(name.contains("sauce")||name.contains("Sauce"))
                         priority=100;
-                    else if(name.contains("Char Siu Pork"))
-                        priority=0;
-                    else if(name.contains("Buffalo Chicken"))
-                        priority=1;
                     data.put(name,priority);
                 }
         }
