@@ -24,6 +24,6 @@ Image             | Twitter RSS in Gif
 ## Menu Display
 Image             | Twitter RSS in Gif
 :-------------------------:|:-------------------------:
-![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/1.webp) |  ![alt txt]https://github.com/TheoSeo93/SBU_Foodie/blob/master/2.webp)
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/2.webp) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/3.webp)
 
 
