@@ -9,6 +9,9 @@ Please see this repository!
 https://github.com/TheoSeo93/PythonCrawler
 
 #Rate System
-![alt txt](https://media.giphy.com/media/9PekRQtn8Qc4wmk6tQ/giphy.gif)
+
+Rating System in Gif             | Image
+:-------------------------:|:-------------------------:
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/rate.gif) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/p3.jpg)
 
 
