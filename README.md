@@ -27,3 +27,7 @@ West             | East
 ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/2.webp) |  ![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/3.webp)
 
 
+## Navigation (For freshsers)
+![alt txt](https://github.com/TheoSeo93/SBU_Foodie/blob/master/4.webp)
+
+
