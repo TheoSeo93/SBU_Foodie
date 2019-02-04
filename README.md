@@ -1,4 +1,4 @@
-# SBU_Foodie
+# SBU_Foodie (Serviced from May, 2018 to Dec, 2018)
 Stony Brook University
 
 App that shows what's currently being served in SUNY Stonybrook dining halls in real time.
