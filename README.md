@@ -5,6 +5,8 @@ App that shows what's currently being served in SUNY Stonybrook dining halls in 
 
 Currently unpublished because the school has changed the website where I get data.
 
+You'll keep seeing the name of "Ilsung" from comments bc I kept using my dad's laptop for the whole years of my student years..
+
 Please see this repository!
 https://github.com/TheoSeo93/PythonCrawler
 
